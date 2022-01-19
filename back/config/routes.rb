@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     }
 
     resources :messages, only: ['index'] do
+    # resources :messages, only: ['index','create'] do
       member do
         resources :likes, only: ['create']
       end

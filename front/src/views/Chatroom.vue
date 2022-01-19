@@ -48,7 +48,26 @@ export default {
         message: message,
         email: window.localStorage.getItem('uid')
       })
-    }
+    },
+    // async createMessage(message){
+    //   try{
+    //     const res = await axios.post('http://localhost:3000/messages',{
+    //       message,
+    //       email: window.localStorage.getItem('uid')
+    //     },{
+    //       headers: {
+    //         "uid": window.localStorage.getItem('uid'),
+    //         "access-token": window.localStorage.getItem('access-token'),
+    //         client: window.localStorage.getItem('client')
+    //       }
+    //     })
+    //     if(!res){
+    //       new Error('メッセージが作成できませんでした')
+    //     }
+    //   } catch(error){
+    //     console.log(error)
+    //   }
+    // }
   },
   mounted() {
     const cable = ActionCable.createConsumer('ws://localhost:3000/cable')
