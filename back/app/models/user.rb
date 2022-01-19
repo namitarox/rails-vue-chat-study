@@ -2,6 +2,7 @@
 
 class User < ActiveRecord::Base
   has_many :messages
+  has_many :likes
 
   validates :name, presence: true
   validates :name, length: { maximum: 30 }
